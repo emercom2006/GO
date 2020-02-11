@@ -5,23 +5,16 @@ import (
 	"math"
 )
 
-var (
-	a float64
-	b float64
-	c float64
-	s float64
-	p float64
-)
-
 func main() {
+	var a, b float64
 	fmt.Println("Введите, значение катета a")
 	if _, err := fmt.Scanln(&a); err != nil {
-		fmt.Println("Вы ввели не число")
+		fmt.Printf("Вы ввели не число %s", err)
 		return
 	}
 	fmt.Println("Введите, значение катета b")
 	if _, err := fmt.Scanln(&b); err != nil {
-		fmt.Println("Вы ввели не число")
+		fmt.Printf("Вы ввели не число %s", err)
 		return
 	}
 

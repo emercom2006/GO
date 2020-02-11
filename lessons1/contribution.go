@@ -4,21 +4,17 @@ import (
 	"fmt"
 )
 
-var (
-	contribution float64
-	percent      float64
-	sum          float64
-)
-
 func main() {
+	var contribution, percent, sum float64
+
 	fmt.Print("Введите сумму вклада:")
 	if _, err := fmt.Scanln(&contribution); err != nil {
-		fmt.Print("Вы ввели не число")
+		fmt.Printf("Вы ввели не число %s", err)
 		return
 	}
 	fmt.Print("Введите годовой процент:")
 	if _, err := fmt.Scanln(&percent); err != nil {
-		fmt.Print("Вы ввели не число")
+		fmt.Printf("Вы ввели не число %s", err)
 		return
 	}
 	for i := 1; i <= 5; i++ {

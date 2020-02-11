@@ -12,7 +12,7 @@ var Rub float64
 func main() {
 	fmt.Println("Введите, сколько хотите обменять рублей на USD")
 	if _, err := fmt.Scanln(&Rub); err != nil {
-		fmt.Println("Вы ввели не число")
+		fmt.Printf("Вы ввели не число %s", err)
 		return
 	}
 	b := Rub / DollarRate
