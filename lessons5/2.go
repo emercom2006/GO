@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	file, err := os.Open("задание1")
+	file, err := os.Open("csv")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -27,6 +27,9 @@ func main() {
 	for {
 		n, err := file.Read(data)
 		if err == io.EOF { // если конец файла
+			break // выходим из цикла
+		}
+		if err != nil { // если ошибка чтения
 			break // выходим из цикла
 		}
 		fmt.Print(string(data[:n]))
